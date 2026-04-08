@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owly Books App</title>
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Owly Books</h1>
+      <p>Cerca libri per categoria e scopri i dettagli</p>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <form id="search-form">
+          <label for="category-input">Categoria</label>
+          <input
+            id="category-input"
+            type="text"
+            placeholder="Es. fantasy"
+            autocomplete="off"
+          />
+          <button type="submit">Cerca</button>
+        </form>
+      </section>
+
+      <section id="status-message"></section>
+
+      <section class="results-section">
+        <h2>Risultati</h2>
+        <div id="books-list"></div>
+      </section>
+
+      <section class="details-section">
+        <h2>Dettagli libro</h2>
+        <div id="book-detail"></div>
+      </section>
+    </main>
+  </body>
+</html>
