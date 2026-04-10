@@ -1,3 +1,5 @@
+import { getDescription } from "../utils/helpers";
+
 export function renderBookDetail(book) {
   const detailContainer = document.getElementById("book-detail");
 
@@ -14,20 +16,4 @@ export function renderBookDetail(book) {
   `;
 
   detailContainer.scrollIntoView({ behavior: "smooth" });
-}
-
-function getDescription(description) {
-  if (!description) {
-    return "Descrizione non disponibile.";
-  }
-
-  if (typeof description === "string") {
-    return description;
-  }
-
-  if (typeof description === "object" && description.value) {
-    return description.value;
-  }
-
-  return "Descrizione non disponibile.";
 }

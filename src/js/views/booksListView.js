@@ -1,10 +1,17 @@
+import { formatAuthors } from "../utils/helpers";
+
 export function renderBooksList(books) {
   const booksListContainer = document.getElementById("books-list");
 
   booksListContainer.innerHTML = "";
 
   if (!books.length) {
-    booksListContainer.innerHTML = "<p>Nessun libro trovato.</p>";
+    booksListContainer.innerHTML = `
+      <p style="text-align:center; color:#64748b;">
+        Nessun risultato trovato.<br>
+        Prova con una categoria diversa.
+      </p>
+    `;
     return;
   }
 
@@ -12,9 +19,7 @@ export function renderBooksList(books) {
     const bookElement = document.createElement("article");
     bookElement.classList.add("book-card");
 
-    const authors =
-      book.authors?.map((author) => author.name).join(", ") ||
-      "Autore non disponibile";
+    const authors = formatAuthors(book.authors);
 
     bookElement.innerHTML = `
       <h3>${book.title}</h3>

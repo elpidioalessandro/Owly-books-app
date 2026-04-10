@@ -4,6 +4,7 @@ import {
 } from "../api/openLibraryService";
 import { renderBooksList } from "../views/booksListView";
 import { renderBookDetail } from "../views/bookDetailView";
+import { normalizeCategory } from "../utils/helpers";
 
 export function init() {
   const form = document.getElementById("search-form");
@@ -20,7 +21,7 @@ async function handleSearch(event) {
   event.preventDefault();
 
   const input = document.getElementById("category-input");
-  const category = input.value.trim();
+  const category = normalizeCategory(input.value);
   const statusMessage = document.getElementById("status-message");
   const detailContainer = document.getElementById("book-detail");
   const booksListContainer = document.getElementById("books-list");
