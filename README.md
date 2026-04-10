@@ -7,7 +7,7 @@ Cliccando su un libro è possibile visualizzarne i dettagli tramite una seconda 
 
 
 ## Demo online
-Link: inserire il link 
+Link: https://owlybooksapp.netlify.app
 
 
 ## Screenshot
